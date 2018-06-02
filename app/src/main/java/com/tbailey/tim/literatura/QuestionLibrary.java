@@ -19,7 +19,7 @@ public class QuestionLibrary {
             {"Mandela","Ikemefuna","T'Challa","Ubuntu"},
             {"Week of Peace","Shark Week","Rain Dance","Week of Solace"},
             {"Omar","Steven Kumalo","Nwoye","Habibi"},
-            {"Ekwefi the Lion, Akinfenwa the Goat, Ezinma the Dog, Amalinze the Cat"}
+            {"Ekwefi the Lion", "Akinfenwa the Goat", "Ezinma the Dog", "Amalinze the Cat"}
     };
 
     private String mCorrectAnswers[] = {"Okonkwo", "Ikemefuna", "Week of Peace", "Nwoye", "Amalinze the Cat"};

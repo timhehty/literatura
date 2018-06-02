@@ -25,9 +25,14 @@
             android:visibility="gone"/>
 
         <TextView
+            android:id="@+id/greetingMessage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text = "Welcome to literatura! Search for books above ^ " />
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:includeFontPadding="false"
+            android:text="Welcome to literatura! Search for books above."
+            android:textAppearance="@style/TextAppearance.Compat.Notification"
+            android:visibility="visible" />
 
         <ListView
             android:id="@+id/lvBooks"

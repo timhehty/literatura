@@ -30,7 +30,7 @@ public class BookListActivity extends AppCompatActivity {
     private BookAdapter bookAdapter;
     private BookClient client;
     private ProgressBar progress;
-
+    private TextView greetingMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class BookListActivity extends AppCompatActivity {
         bookAdapter = new BookAdapter(this, aBooks);
         lvBooks.setAdapter(bookAdapter);
         progress = (ProgressBar) findViewById(R.id.progress);
+        greetingMessage = (TextView) findViewById(R.id.greetingMessage);
         setupBookSelectedListener();
     }
 
@@ -62,6 +63,7 @@ public class BookListActivity extends AppCompatActivity {
         isbnVector.add("0140285652"); //death of a salesman
         isbnVector.add("0743482786"); //hamlet
 
+        greetingMessage.setVisibility(TextView.GONE);
         progress.setVisibility(ProgressBar.VISIBLE);
         client = new BookClient();
         client.getBooks(query, new JsonHttpResponseHandler() {
@@ -80,7 +82,6 @@ public class BookListActivity extends AppCompatActivity {
                         bookAdapter.clear();
                         // Load model objects into the adapter
                         for (Book book : books) {
-                            System.out.println(book.getIsbn());
                             if(isbnVector.contains(book.getIsbn()))
                                 bookAdapter.add(book); // add book through the adapter}
                         }

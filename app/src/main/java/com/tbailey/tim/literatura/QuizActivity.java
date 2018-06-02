@@ -2,6 +2,7 @@ package com.tbailey.tim.literatura;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,8 +22,10 @@ public class QuizActivity extends AppCompatActivity {
     private Button mButtonChoice4;
 
     private String mAnswer;
-    private int mScore = 0;
+    private int mScore = 1;
     private int mQuestionNumber = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,16 +46,32 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 //My logic for Button goes in here
-
                 if (mButtonChoice1.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
+                    updateScore();
                     updateQuestion();
-                    //This line of code is optional
+                    mScore++;
                     Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
+                    mButtonChoice1.setBackgroundColor(Color.GREEN); //set the color to green
+                    // Delay of 1 second (100 ms) before changing back the color to black
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mButtonChoice1.setBackgroundColor(Color.GRAY); //set the color back
+                        }
+                    }, 100);
                 }else {
                     Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
+                    mButtonChoice1.setBackgroundColor(Color.RED); //set the color to red
+                    // Delay of 2 seconds (200 ms) before changing back the color to black
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mButtonChoice1.setBackgroundColor(Color.GRAY); //set the color back
+                        }
+                    }, 100);
+                    //updateQuestion();
                 }
             }
         });
@@ -66,14 +85,32 @@ public class QuizActivity extends AppCompatActivity {
                 //My logic for Button goes in here
 
                 if (mButtonChoice2.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
+                    updateScore();
                     updateQuestion();
+                    mScore++;
                     //This line of code is optional
                     Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
+                    mButtonChoice2.setBackgroundColor(Color.GREEN); //set the color to green
+                    // Delay of 1 second (100 ms) before changing back the color to black
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mButtonChoice2.setBackgroundColor(Color.GRAY); //set the color back
+                        }
+                    }, 100);
                 }else {
                     Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
+                    mButtonChoice2.setBackgroundColor(Color.RED); //set the color to red
+                    // Delay of 2 seconds (200 ms) before changing back the color to black
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mButtonChoice2.setBackgroundColor(Color.GRAY); //set the color back
+                        }
+                    }, 100);
+                    //updateQuestion();
                 }
             }
         });
@@ -88,14 +125,32 @@ public class QuizActivity extends AppCompatActivity {
                 //My logic for Button goes in here
 
                 if (mButtonChoice3.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
+                    updateScore();
                     updateQuestion();
+                    mScore++;
                     //This line of code is optional
                     Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
+                    mButtonChoice3.setBackgroundColor(Color.GREEN); //set the color to green
+                    // Delay of 1 second (100 ms) before changing back the color to black
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mButtonChoice3.setBackgroundColor(Color.GRAY); //set the color back
+                        }
+                    }, 100);
                 }else {
                     Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
+                    mButtonChoice3.setBackgroundColor(Color.RED); //set the color to red
+                    // Delay of 2 seconds (200 ms) before changing back the color to black
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mButtonChoice3.setBackgroundColor(Color.GRAY); //set the color back
+                        }
+                    }, 100);
+                    //updateQuestion();
                 }
             }
         });
@@ -106,16 +161,33 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 //My logic for Button goes in here
-
                 if (mButtonChoice4.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
+                    updateScore();
                     updateQuestion();
+                    mScore++;
                     //This line of code is optional
                     Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
+                    mButtonChoice4.setBackgroundColor(Color.GREEN); //set the color to green
+                    // Delay of 1 second (100 ms) before changing back the color to black
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mButtonChoice4.setBackgroundColor(Color.GRAY); //set the color back
+                        }
+                    }, 100);
                 }else {
                     Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
-                    updateQuestion();
+                    mButtonChoice4.setBackgroundColor(Color.RED); //set the color to red
+                    // Delay of 1 second (100 ms) before changing back the color to black
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mButtonChoice4.setBackgroundColor(Color.GRAY); //set the color back
+                        }
+                    }, 100);
+                    //updateQuestion();
                 }
             }
         });
@@ -123,7 +195,8 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void updateQuestion(){
-        while (mScore < 5){
+        System.out.println(mQuestionNumber);
+        if(mQuestionNumber < mQuestionLibrary.getLength()) {
             mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
             mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
             mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
@@ -133,11 +206,14 @@ public class QuizActivity extends AppCompatActivity {
             mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
             mQuestionNumber++;
         }
-        this.finish();
+        else{
+            Toast.makeText(QuizActivity.this, "Congratulations, you scored " + mScore + " out of 5!", Toast.LENGTH_SHORT).show();
+            this.finish();
+        }
     }
 
-    private void updateScore(int point) {
-        mScoreView.setText(mScore + "/5");
+    private void updateScore() {
+        mScoreView.setText("" + mScore + "/5");
     }
 
 }
