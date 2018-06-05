@@ -12,7 +12,8 @@ import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
+    Book book = new Book();
+    private QuestionLibrary mQuestionLibrary = new QuestionLibrary(book.title);
 
     private TextView mScoreView;
     private TextView mQuestionView;
@@ -24,8 +25,6 @@ public class QuizActivity extends AppCompatActivity {
     private String mAnswer;
     private int mScore = 1;
     private int mQuestionNumber = 0;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
