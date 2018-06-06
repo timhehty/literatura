@@ -25,7 +25,7 @@ import java.util.Vector;
 import cz.msebera.android.httpclient.Header;
 
 public class BookListActivity extends AppCompatActivity {
-    public static final String QUIZ_key = "";
+    public static final String QUIZ_key = "book";
     private ListView lvBooks;
     private BookAdapter bookAdapter;
     private BookClient client;
