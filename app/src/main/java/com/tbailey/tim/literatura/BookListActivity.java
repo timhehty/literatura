@@ -62,6 +62,8 @@ public class BookListActivity extends AppCompatActivity {
         isbnVector.add("1855011441"); //wuthering heights
         isbnVector.add("0140285652"); //death of a salesman
         isbnVector.add("0743482786"); //hamlet
+        isbnVector.add("9781561036219"); //don quixote
+        isbnVector.add("0684153270"); //the sun also rises
 
         greetingMessage.setVisibility(TextView.GONE);
         progress.setVisibility(ProgressBar.VISIBLE);
