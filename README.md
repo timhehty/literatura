@@ -10,4 +10,4 @@ The questions are edited based off of a quizbowl study guide by Kevin Kodama.
 
 Check out the prototype on [Figma](https://www.figma.com/proto/PhUbHgJ28HrCGJ9CuN9esmfL/literatura?node-id=24%3A241&scaling=scale-down)!
 
-![Mock-ups](https://imgur.com/a/Ut0PWTy)
+![Mock-ups](https://i.imgur.com/Qupwz94.png)
